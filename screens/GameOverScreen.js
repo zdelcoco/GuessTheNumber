@@ -21,9 +21,9 @@ export default GameOverScreen;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    width: 400,
-    height: 400,
-    borderRadius: 200,
+    width: 300,
+    height: 300,
+    borderRadius: 150,
     borderWidth: 3,
     borderColor: Colors.primary800,
     overflow: 'hidden',
