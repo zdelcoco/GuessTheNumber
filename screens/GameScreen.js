@@ -13,7 +13,7 @@ let maxBoundary = 99;
 
 function GameScreen({ userNumber, onGuess, onGameOver }) {
   const [guessedNumber, setGuessedNumber] = useState(
-    getRandomInt(minBoundary, maxBoundary, userNumber)
+    getRandomInt(1, 99, userNumber)
   );
 
   useEffect(() => {

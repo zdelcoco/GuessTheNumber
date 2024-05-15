@@ -41,6 +41,12 @@ export default function App() {
     console.log('Game Over -- App.js');
   }
 
+  function restartHandler() {
+    setUserNumber(null);
+    setNumGuesses(1);
+    setGameIsOver(false);
+  };
+
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
   if (userNumber) {
@@ -54,7 +60,13 @@ export default function App() {
   }
 
   if (gameIsOver && userNumber) {
-    screen = <GameOverScreen numGuesses={numGuesses} userNumber={userNumber}/>;
+    screen = (
+      <GameOverScreen
+        numGuesses={numGuesses}
+        userNumber={userNumber}
+        onRestart={restartHandler}
+      />
+    );
   }
 
   return (
