@@ -1,5 +1,6 @@
 import { Alert, View, StyleSheet } from 'react-native';
 import { useState, useEffect } from 'react';
+import { Ionicons } from '@expo/vector-icons';
 
 import Title from '../components/ui/Title';
 import Card from '../components/ui/Card';
@@ -68,12 +69,12 @@ function GameScreen({ userNumber, onGuess, onGameOver }) {
         <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
-              -
+              <Ionicons name="remove" size={24} color="white"/>
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'higher')}>
-              +
+            <Ionicons name="add" size={24} color="white"/>
             </PrimaryButton>
           </View>          
         </View>
