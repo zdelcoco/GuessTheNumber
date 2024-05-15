@@ -54,7 +54,7 @@ export default function App() {
   }
 
   if (gameIsOver && userNumber) {
-    screen = <GameOverScreen numGuesses={numGuesses} />;
+    screen = <GameOverScreen numGuesses={numGuesses} userNumber={userNumber}/>;
   }
 
   return (

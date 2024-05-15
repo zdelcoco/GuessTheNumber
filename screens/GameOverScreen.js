@@ -1,11 +1,11 @@
-import { View, Text, Image, StyleSheet, ImageComponent } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import Title from '../components/ui/Title';
 
 import Colors from '../constants/colors';
 
-function GameOverScreen({ numGuesses }) {
+function GameOverScreen({ numGuesses, userNumber }) {
   return (
-    <View>
+    <View style={styles.rootContainer}>
       <Title>GAME OVER!</Title>
       <View style={styles.imageContainer}>
         <Image          
@@ -13,6 +13,7 @@ function GameOverScreen({ numGuesses }) {
           source={require('../assets/images/success.png')}
         />
       </View>
+      <Text>Your phone needed {numGuesses} rounds to guess the number {userNumber} </Text>
     </View>
   );
 }
@@ -20,6 +21,12 @@ function GameOverScreen({ numGuesses }) {
 export default GameOverScreen;
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1,
+    padding: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   imageContainer: {
     width: 300,
     height: 300,
