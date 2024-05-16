@@ -9,13 +9,20 @@ function GameOverScreen({ numGuesses, userNumber, onRestart }) {
     <View style={styles.rootContainer}>
       <Title>GAME OVER!</Title>
       <View style={styles.imageContainer}>
-        <Image          
+        <Image
           style={styles.image}
           source={require('../assets/images/success.png')}
         />
       </View>
-      <Text>Your phone needed {numGuesses} rounds to guess the number {userNumber} </Text>
-      <PrimaryButton onPress={onRestart}>Restart</PrimaryButton>
+      <Text style={styles.summaryText}>
+        Your phone needed <Text style={styles.highlightText}>{numGuesses}</Text>{' '}
+        rounds to guess the number{' '}
+        <Text style={styles.highlightText}>{userNumber}</Text>
+        .
+      </Text>
+      <View style={styles.buttonContainer}>
+        <PrimaryButton onPress={onRestart}>Start New Game</PrimaryButton>
+      </View>
     </View>
   );
 }
@@ -41,5 +48,17 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+  },
+  buttonContainer: {
+    padding: 24,
+  },
+  summaryText: {
+    fontFamily: 'open-sans',
+    fontSize: 24,
+    textAlign: 'center',
+  },
+  highlightText: {
+    fontFamily: 'open-sans-bold',
+    color: Colors.primary500,
   },
 });
