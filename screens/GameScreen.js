@@ -18,7 +18,6 @@ function GameScreen({ userNumber, onGuess, onGameOver }) {
 
   useEffect(() => {
     if (guessedNumber === userNumber) {
-      console.log('Game Over -- GameScreen.js');
       onGameOver();
     }
   }, [guessedNumber, userNumber, onGameOver]);
@@ -39,8 +38,6 @@ function GameScreen({ userNumber, onGuess, onGameOver }) {
     } else {
       minBoundary = guessedNumber + 1;
     }
-
-    console.log(minBoundary, maxBoundary);
 
     const newRndNumber = getRandomInt(minBoundary, maxBoundary, guessedNumber);
 

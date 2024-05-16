@@ -38,7 +38,6 @@ export default function App() {
 
   function gameOverHandler() {
     setGameIsOver(true);
-    console.log('Game Over -- App.js');
   }
 
   function restartHandler() {
